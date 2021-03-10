@@ -105,5 +105,5 @@ fetch(url2)
 
 
   
-
+console.log('This should log first')
 
