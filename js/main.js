@@ -82,7 +82,6 @@ fetch(url2)
   .then((res) => {
   res.json()
   .then((data) =>{
-  console.log(Number(data.stats[0].base_stat + data.stats[1].base_stat + data.stats[2].base_stat + data.stats[3].base_stat + data.stats[4].base_stat + data.stats[5].base_stat) )
     name2 = data.forms[0].name;
     let pic2 = data.sprites.other['official-artwork'].front_default
     level2 = Number(data.stats[0].base_stat + data.stats[1].base_stat + data.stats[2].base_stat + data.stats[3].base_stat + data.stats[4].base_stat + data.stats[5].base_stat)
@@ -90,11 +89,12 @@ fetch(url2)
     document.querySelector('#pokeImg2').src = pic2
     document.querySelector('#pokeImg2').style.visibility = "visible";
     document.querySelector('#secondScore').innerText = `Your total score is ${level2}`
+    console.log(level2)
     if(level1 > level2){
-      document.querySelector('h5').innerText = `${name1} wins the battle!`
+      document.querySelector('h5').innerText = `${name1}`.toUpperCase() +  " wins the battle!"
     } else if(level2 > level1){
-      document.querySelector('h5').innerText = `${name2} wins the battle!`
-    } else if( level === level2){
+      document.querySelector('h5').innerText = `${name2}`.toUpperCase() + " wins the battle!"
+    } else if(level1 == level2){
       document.querySelector('h5').innerText = 'This battle is a draw!'
     }
   
