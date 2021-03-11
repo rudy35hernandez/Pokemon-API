@@ -94,7 +94,7 @@ fetch(url2)
       document.querySelector('h5').innerText = `${name1} wins the battle!`
     } else if(level2 > level1){
       document.querySelector('h5').innerText = `${name2} wins the battle!`
-    } else {
+    } else if( level === level2){
       document.querySelector('h5').innerText = 'This battle is a draw!'
     }
   
